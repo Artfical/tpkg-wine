@@ -1,0 +1,8 @@
+Wine 10.0 for tOS
+=================
+
+Built from wine-10.0.tar.xz (beside this package), unmodified: ./configure --prefix=/system/pkg/wine --enable-archs=i386,x86_64 --with-x --with-freetype, and without sound, OpenGL, Vulkan, Direct3D (vkd3d), printing (CUPS), dbus, GnuTLS, GStreamer, SDL, USB, udev, inotify and fontconfig. The Windows-side libraries (.dll, .exe) were built with mingw-w64 (x86-64) and stripped of debugging information. Left out of this package: the 32-bit Windows libraries (i386-windows), headers, import libraries, manuals and Wine's developer tools (winegcc, widl, wrc...).
+
+What this package adds: bin/tos-wine and the tos-* scripts beside it (the commands wine, msiexec, winecfg, regedit, winepath, wineconsole and wine-notepad run them), and share/prefix, a Wine folder that wineboot made, minus the copies of the Windows libraries. The first time you run wine, ~/.wine (or $WINEPREFIX) is made from it: the registry and folders are copied and the libraries are linked in, which takes seconds instead of the minutes wineboot needs. The package needs the xorg package (windows are drawn on its X server: tos-x wine program.exe) and busybox.
+
+Wine is under the GNU LGPL 2.1 or later (LICENSE). It carries libraries under their own licences (LICENSE.*): zlib, libpng, libjpeg (IJG), lcms2 (MIT), libxml2 and libxslt (MIT), faudio (zlib), mpg123 (LGPL), vkd3d (LGPL), OpenLDAP (OpenLDAP public licence), jxr (BSD) and fluidsynth (LGPL). Wine's own fonts (share/wine/fonts) are described in the source tarball.

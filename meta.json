@@ -1,0 +1,46 @@
+{
+ "name": "wine",
+ "version": "10.0",
+ "license": "LGPL-2.1-or-later (Wine); the libraries it carries are under zlib, libpng, IJG, MIT, BSD and LGPL licences",
+ "homepage": "https://www.winehq.org",
+ "licenses": [
+  "LICENSE",
+  "LICENSE.faudio",
+  "LICENSE.fluidsynth",
+  "LICENSE.jpeg",
+  "LICENSE.jxr",
+  "LICENSE.lcms2",
+  "LICENSE.ldap",
+  "LICENSE.mpg123",
+  "LICENSE.png",
+  "LICENSE.vkd3d",
+  "LICENSE.wine",
+  "LICENSE.xml2",
+  "LICENSE.xslt",
+  "LICENSE.zlib",
+  "NOTICE.txt"
+ ],
+ "sources": [
+  "wine-10.0.tar.xz"
+ ],
+ "desc": "Wine 10.0: runs 64-bit Windows programs (console and windowed, with the X server of the xorg package: tos-x wine program.exe) and installs .msi packages (wine msiexec /i file.msi); no sound, no OpenGL or Direct3D",
+ "file": "wine-10.0.tpkg",
+ "size": 73700471,
+ "sha256": "3811710bafc4f3d0682f4895ba5e8f7c3938e6d8b2b7cb38d1b447f45eaccc63",
+ "unpacked": 231993651,
+ "min_build": 634,
+ "depends": [
+  "xorg",
+  "busybox"
+ ],
+ "commands": {
+  "wine": "bin/tos-wine",
+  "wineserver": "bin/tos-wineserver",
+  "msiexec": "bin/tos-msiexec",
+  "winecfg": "bin/tos-winecfg",
+  "regedit": "bin/tos-regedit",
+  "winepath": "bin/tos-winepath",
+  "wineconsole": "bin/tos-wineconsole",
+  "wine-notepad": "bin/tos-notepad"
+ }
+}
